@@ -1,97 +1,63 @@
-import { Mail, Facebook, Linkedin, Instagram, Github, Send } from "lucide-react";
-
+import React from 'react'
+import { Link } from "react-router-dom";
+import Container from "../assets/images/container.png";
+import Linkdin from "../assets/images/linkdin.png";
+import Twitter from "../assets/images/twitter.png";
+import Rond from "../assets/images/rond.png";
+import Mail from "../assets/images/mail.png";
+import Telephone from "../assets/images/telephone.png";
+import Location from "../assets/images/location.png";
 export default function Footer() {
   return (
-    <footer className="bg-black text-white py-12 text-xl md:text-lg"   style={{ fontFamily: "Winky Sans, sans-serif" }}>
-      <div className="max-w-8xl mx-auto px-[10%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        
-        {/* A propos de nous */}
-        <div>
-        
-          <h3 className="md:text-xl text-lg font-semibold mb-4 relative w-fit cursor-pointer">
-            À propos de nous
-            <span className="absolute left-0 bottom-0 w-1/2 h-1 rounded-md bg-blue-500"></span>
-          </h3>
-          <h2 className="text-3xl font-bold text-blue-500 mb-2">MentisCare</h2>
-          <p className="text-gray-400 text-lg">
-            Une plateforme numérique dédiée au bien-être mental, offrant un suivi et un accompagnement personnalisé.
-          </p>
-          <div className="flex gap-4 mt-4">
-            <a href="#" className="text-gray-400 hover:text-blue-500">
-              <Facebook size={20} />
-            </a>
-            <a href="#" className="text-gray-400 hover:text-blue-500">
-              <Linkedin size={20} />
-            </a>
-            <a href="#" className="text-gray-400 hover:text-blue-500">
-              <Instagram size={20} />
-            </a>
-            <a href="#" className="text-gray-400 hover:text-blue-500">
-              <Mail size={20} />
-            </a>
-            <a href="#" className="text-gray-400 hover:text-blue-500">
-              <Github size={20} />
-            </a>
-          </div>
-        </div>
+    <footer className="py-[30px] bg-[#EEEBE5] px-6 md:px-[100px]">
+  <div className="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-0">
+    <p className="text-[#5700FF] text-[16px] font-semibold">Jeffery Cannon.</p>
 
-        {/* Liens rapides */}
-        <div>
-          <h3 className="md:text-xl text-lg font-semibold mb-4 relative w-fit cursor-pointer">
-            Liens rapides
-            <span className="absolute left-0 bottom-0 w-1/2 h-1 rounded-md bg-blue-500"></span>
-          </h3>
-          <ul className="text-gray-400 text-lg">
-            <li className="mb-2"><a href="/" className="hover:text-blue-300">Accueil</a></li>
-            <li className="mb-2"><a href="/fonctionnalites" className="hover:text-blue-500">Fonctionnalités</a></li>
-            <li className="mb-2"><a href="/contact" className="hover:text-blue-500">Contact</a></li>
-            <li className="mb-2"><a href="/realisations" className="hover:text-blue-500">Réalisations</a></li>
-            <li><a href="/about" className="hover:text-blue-500">À propos</a></li>
-          </ul>
-        </div>
+    <nav>
+      <ul className="flex flex-col md:flex-row gap-4 md:gap-10 text-[18px] items-center text-[#333333] text-center">
+        <li className="cursor-pointer">
+          <Link to="/">Home</Link>
+        </li>
+        <li className="cursor-pointer">
+          <Link to="/AboutMe">About Me</Link>
+        </li>
+        <li className="cursor-pointer">
+          <Link to="/Portfolio">Portfolio</Link>
+        </li>
+        <li className="cursor-pointer">
+          <Link to="/Contact">Contact Me</Link>
+        </li>
+      </ul>
+    </nav>
 
-        {/* Nos services */}
-        <div>
-          <h3 className="md:text-xl text-lg font-semibold mb-4 relative w-fit cursor-pointer">
-            Nos services
-            <span className="absolute left-0 bottom-0 w-1/2 h-1 rounded-md bg-blue-500"></span>
-          </h3>
-          <ul className="text-gray-400 text-lg">
-            <li className="mb-2"><a href="/services#consultation" className="hover:text-blue-500">Consultations en ligne</a></li>
-            <li className="mb-2"><a href="/services#suivi" className="hover:text-blue-500">Suivi personnalisé</a></li>
-            <li className="mb-2"><a href="/services#communauté" className="hover:text-blue-500">Espace d'échange</a></li>
-            <li><a href="/services#orientation" className="hover:text-blue-500">Orientation vers des spécialistes</a></li>
-          </ul>
-        </div>
+    <div className="flex gap-x-2">
+      <img src={Linkdin} alt="LinkedIn" className="w-6 h-6" />
+      <img src={Twitter} alt="Twitter" className="w-6 h-6" />
+      <img src={Rond} alt="Social Icon" className="w-6 h-6" />
+    </div>
+  </div>
 
-        {/* Newsletter */}
-        <div>
-          <h3 className="md:text-xl text-lg font-semibold mb-4 relative w-fit cursor-pointer">
-            Newsletter
-            <span className="absolute left-0 bottom-0 w-1/2 h-1 rounded-md bg-blue-500"></span>
-          </h3>
-          <p className="text-gray-400 text-lg mb-4">
-            Inscrivez-vous pour recevoir des conseils et actualités sur la santé mentale.
-          </p>
-          <div className="flex">
-            <input 
-              type="email" 
-              placeholder="Votre email" 
-              className="w-full p-2 text-black rounded-l-md focus:outline-none"
-            />
-            <button className="bg-blue-600 hover:bg-blue-700 px-4 rounded-r-md">
-              <Send size={20} className="text-white" />
-            </button>
-          </div>
-        </div>
-      </div>
+  <div className="flex flex-col lg:flex-row justify-center items-center gap-y-4 lg:gap-x-8 px-4 py-6 text-[16px] text-[#4D4D4D] font-normal border border-[#E1DBD1] rounded-md w-full md:w-fit mx-auto mt-6">
+    <div className="flex gap-x-2 items-center">
+      <img src={Mail} alt="Mail" className="w-5 h-5" />
+      <p className="text-center">jefferycannon@gmail.com</p>
+    </div>
+    <div className="flex gap-x-2 items-center">
+      <img src={Telephone} alt="Phone" className="w-5 h-5" />
+      <p className="text-center">+91 91813 23 2309</p>
+    </div>
+    <div className="flex gap-x-2 items-center">
+      <img src={Location} alt="Location" className="w-5 h-5" />
+      <p className="text-center">Somewhere in the World</p>
+    </div>
+  </div>
 
-      {/* Bas du footer */}
-      <div className="text-center mt-12">
-        <p className="text-gray-500 text-sm">
-          &copy; {new Date().getFullYear()} MentisCare. Tous droits réservés.
-        </p>
-      </div>
-    </footer>
+  <div className="py-[30px]">
+    <p className="text-center text-[16px] text-[#4D4D4D]">
+      Copyright © 2023 Jeffery Cannon. All rights reserved.
+    </p>
+  </div>
+</footer>
+
   );
 }

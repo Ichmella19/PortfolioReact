@@ -102,8 +102,8 @@ const Home= () => {
     };
   
     return (
-      <main className='w-full h-full bg-[#EEEBE5] mt-[60px] min-h-screen w-[100%] gap-x-8  px-[100px] font-manrope '>
-     <section className="flex py-[100px] relative">
+      <main className='w-full h-full bg-[#EEEBE5] mt-[60px] min-h-screen overflow-hidden gap-x-8  px-[100px] font-manrope '>
+     <section className="md:flex py-[100px] relative">
   <div className="flex flex-col gap-y-7 text-start relative z-10">
     <span className="w-[110px] px-3 py-2 text-[#4D4D4D] bg-[#F5F3F0] rounded-[13px]">
       Hello There
@@ -157,10 +157,15 @@ const Home= () => {
 </section>
 
           
-            <section className='py-[30px] justify-center items-center flex flex-col gap-y-5'>
-                <h1 className='text-[#333333] font-semibold text-3xl'>Creative Skills</h1>
-                <p className='text-[16px] text-[#4D4D4D]'>As a web designer, I possess a diverse set of skills and expertise to bring your web design visions to life</p>
-                <div className="max-w-[1200px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 py-[30px]">
+<section className="py-[30px] px-4 sm:px-6 flex flex-col items-center justify-center gap-y-5">
+  <h1 className="text-[#333333] font-semibold text-3xl text-center">
+    Creative Skills
+  </h1>
+  <p className="text-[16px] text-[#4D4D4D] text-center max-w-[800px]">
+    As a web designer, I possess a diverse set of skills and expertise to bring your web design visions to life
+  </p>
+
+  <div className="w-full max-w-[1200px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 py-[30px]">
     {Section.map((item, index) => (
       <div
         key={index}
@@ -178,7 +183,8 @@ const Home= () => {
       </div>
     ))}
   </div>
-            </section>
+</section>
+
             <section className='py-[30px] justify-center items-center flex flex-col gap-y-5'>
                 <h1 className='text-[#333333] font-semibold text-3xl'>Benefits</h1>
                 <p className='text-[16px] text-[#4D4D4D]'>By choosing my web design service, you'll enjoy the following benefits</p>
@@ -212,182 +218,175 @@ const Home= () => {
 </div>
 
             </section>
-            <section className='py-[30px] justify-center items-center flex flex-col gap-y-5'>
-                <h1 className='text-[#333333] font-semibold text-3xl'>My Works</h1>
-                <p className='text-[16px] text-[#4D4D4D]'>Here's what some of my satisfied clients have to say about my work</p>
-                <div className="flex gap-x-10 py-[30px]">
-  <div className="bg-[#F7F6F3] flex flex-col p-[30px] text-start rounded-[12px] gap-y-5 w-[335px]">
-    <p className="text-[#333333] text-[16px]">Z - Aura Perfume Website Design</p>
-    <img src={Aura} alt="" className="w-full h-[240px] object-cover rounded-[8px]" />
-    <div className="flex gap-x-4">
-      <img src={Aura1} alt="" className="w-[60px] h-[45px] object-cover rounded-[4px]" />
-      <img src={Aura2} alt="" className="w-[60px] h-[45px] object-cover rounded-[4px]" />
-      <img src={Aura3} alt="" className="w-[60px] h-[45px] object-cover rounded-[4px]" />
-      <img src={Aura4} alt="" className="w-[60px] h-[45px] object-cover rounded-[4px]" />
+            <section className="py-[30px] flex flex-col items-center gap-y-5">
+  <h1 className="text-[#333333] font-semibold text-3xl text-center">My Works</h1>
+  <p className="text-[16px] text-[#4D4D4D] text-center px-4">
+    Here's what some of my satisfied clients have to say about my work
+  </p>
+
+  <div className="flex flex-col md:flex-row flex-wrap justify-center items-center gap-x-10 gap-y-10 py-[30px]">
+    {/* Project 1 */}
+    <div className="bg-[#F7F6F3] flex flex-col p-[30px] text-start rounded-[12px] gap-y-5 w-full max-w-[335px]">
+      <p className="text-[#333333] text-[16px]">Z - Aura Perfume Website Design</p>
+      <img src={Aura} alt="" className="w-full h-[240px] object-cover rounded-[8px]" />
+      <div className="flex gap-x-4 flex-wrap">
+        <img src={Aura1} alt="" className="w-[60px] h-[45px] object-cover rounded-[4px]" />
+        <img src={Aura2} alt="" className="w-[60px] h-[45px] object-cover rounded-[4px]" />
+        <img src={Aura3} alt="" className="w-[60px] h-[45px] object-cover rounded-[4px]" />
+        <img src={Aura4} alt="" className="w-[60px] h-[45px] object-cover rounded-[4px]" />
+      </div>
+    </div>
+
+    {/* Project 2 */}
+    <div className="bg-[#F7F6F3] flex flex-col p-[30px] text-start rounded-[12px] gap-y-5 w-full max-w-[335px]">
+      <p className="text-[#333333] text-[16px]">Forhelp Charity Website Design</p>
+      <img src={Website} alt="" className="w-full h-[240px] object-cover rounded-[8px]" />
+      <div className="flex gap-x-4 flex-wrap">
+        <img src={Website1} alt="" className="w-[60px] h-[45px] object-cover rounded-[4px]" />
+        <img src={Website2} alt="" className="w-[60px] h-[45px] object-cover rounded-[4px]" />
+        <img src={Website3} alt="" className="w-[60px] h-[45px] object-cover rounded-[4px]" />
+        <img src={Website4} alt="" className="w-[60px] h-[45px] object-cover rounded-[4px]" />
+      </div>
+    </div>
+
+    {/* Project 3 */}
+    <div className="bg-[#F7F6F3] flex flex-col p-[30px] text-start rounded-[12px] gap-y-5 w-full max-w-[335px]">
+      <p className="text-[#333333] text-[16px]">Skill Bridge Website Design</p>
+      <img src={Skill} alt="" className="w-full h-[240px] object-cover rounded-[8px]" />
+      <div className="flex gap-x-4 flex-wrap">
+        <img src={Skill1} alt="" className="w-[60px] h-[45px] object-cover rounded-[4px]" />
+        <img src={Skill2} alt="" className="w-[60px] h-[45px] object-cover rounded-[4px]" />
+        <img src={Skill3} alt="" className="w-[60px] h-[45px] object-cover rounded-[4px]" />
+        <img src={Skill4} alt="" className="w-[60px] h-[45px] object-cover rounded-[4px]" />
+      </div>
     </div>
   </div>
 
-  <div className="bg-[#F7F6F3] flex flex-col p-[30px] text-start rounded-[12px] gap-y-5 w-[335px]">
-    <p className="text-[#333333] text-[16px]">Forhelp Charity Website Design</p>
-    <img src={Website} alt="" className="w-full h-[240px] object-cover rounded-[8px]" />
-    <div className="flex gap-x-4">
-      <img src={Website1} alt="" className="w-[60px] h-[45px] object-cover rounded-[4px]" />
-      <img src={Website2} alt="" className="w-[60px] h-[45px] object-cover rounded-[4px]" />
-      <img src={Website3} alt="" className="w-[60px] h-[45px] object-cover rounded-[4px]" />
-      <img src={Website4} alt="" className="w-[60px] h-[45px] object-cover rounded-[4px]" />
+  <button className="flex justify-center items-center gap-x-2 p-3 bg-[#5700FF] text-white rounded-[8px]">
+    <p className="text-[16px]">View All Projects</p>
+  </button>
+</section>
+
+<section className="py-[30px] flex flex-col items-center gap-y-5 px-4">
+  <h1 className="text-[#333333] font-semibold text-3xl text-center">
+    What My Clients Say About Me
+  </h1>
+  <p className="text-[16px] text-[#4D4D4D] text-center">
+    Here's what some of my satisfied clients have to say about my work
+  </p>
+
+  <div className="flex justify-between items-center w-full max-w-6xl">
+    <p className="text-sm sm:text-base">37 Total Reviews</p>
+    <div className="flex gap-x-2">
+      <img src={btn} alt="left" />
+      <img src={btn1} alt="right" />
     </div>
   </div>
 
-  <div className="bg-[#F7F6F3] flex flex-col p-[30px] text-start rounded-[12px] gap-y-5 w-[335px]">
-    <p className="text-[#333333] text-[16px]">Skill Bridge Website Design</p>
-    <img src={Skill} alt="" className="w-full h-[240px] object-cover rounded-[8px]" />
-    <div className="flex gap-x-4">
-      <img src={Skill1} alt="" className="w-[60px] h-[45px] object-cover rounded-[4px]" />
-      <img src={Skill2} alt="" className="w-[60px] h-[45px] object-cover rounded-[4px]" />
-      <img src={Skill3} alt="" className="w-[60px] h-[45px] object-cover rounded-[4px]" />
-      <img src={Skill4} alt="" className="w-[60px] h-[45px] object-cover rounded-[4px]" />
-    </div>
-  </div>
-</div>
-<button className=" justify-center items-center gap-x-2 p-3 bg-[#5700FF] text-white rounded-[8px]">
-       
-        <p className="text-[16px]">View All Projects</p>
-      </button>
-
-            </section>
-            <section className='py-[30px] justify-center items-center flex flex-col gap-y-5'>
-                <h1 className='text-[#333333] font-semibold text-3xl'>What My Clients say About Me</h1>
-                <p className='text-[16px] text-[#4D4D4D]'>Here's what some of my satisfied clients have to say about my work</p>
-                <div className='flex justify-between  items-center w-[100%]'>
-                    <p>37 Total Reviews</p>
-                    <div className='flex  gap-x-2 '>
-                        <img src={btn} alt="" />
-                        <img src={btn1} alt="" />
-                    </div>
-                </div>
-                <div className="flex gap-8 justify-center">
-  <div className="bg-[#F7F6F3] w-[360px] p-6 flex flex-col gap-4 rounded-[12px]">
-    <div className="flex justify-between items-start">
-      <div className="flex flex-col">
-        <h1 className="font-semibold text-[16px] text-[#333]">Sarah Thompson</h1>
-        <p className="text-[14px] text-[#666]">produce-ui.com</p>
-      </div>
-      <div className="flex gap-2">
-        <img src={btn2} alt="" className="" />
-        <img src={btn3} alt="" className="" />
-        <img src={btn4} alt="" className="" />
-      </div>
-    </div>
-    <div className="flex gap-1">
-      <img src={Shape} alt="" className="w-5 h-5" />
-      <img src={Shape} alt="" className="w-5 h-5" />
-      <img src={Shape} alt="" className="w-5 h-5" />
-      <img src={Shape} alt="" className="w-5 h-5" />
-      <img src={Shape} alt="" className="w-5 h-5" />
-    </div>
-    <p className="text-[14px] text-[#333] leading-relaxed">
-      Jeffery Cannon is an incredibly talented web designer. His attention to detail and creative flair are unmatched. He took my website from ordinary to extraordinary, capturing the essence of my brand perfectly. Working with Jeffery was a breeze, as he listened to my needs and provided expert guidance throughout the design process. I highly recommend Jeffery for anyone looking to elevate their online presence.
-    </p>
-  </div>
-
-  <div className="bg-[#F7F6F3] w-[360px] p-6 flex flex-col gap-4 rounded-[12px]">
-    <div className="flex justify-between items-start">
-      <div className="flex flex-col">
-        <h1 className="font-semibold text-[16px] text-[#333]">Emily Roberts</h1>
-        <p className="text-[14px] text-[#666]">produce-ui.com</p>
-      </div>
-      <div className="flex gap-2">
-        <img src={btn2} alt="" className="" />
-        <img src={btn3} alt="" className="" />
-        <img src={btn4} alt="" className="" />
-      </div>
-    </div>
-    <div className="flex gap-1">
-      <img src={Shape} alt="" className="w-5 h-5" />
-      <img src={Shape} alt="" className="w-5 h-5" />
-      <img src={Shape} alt="" className="w-5 h-5" />
-      <img src={Shape} alt="" className="w-5 h-5" />
-      <img src={Shape} alt="" className="w-5 h-5" />
-    </div>
-    <p className="text-[14px] text-[#333] leading-relaxed">
-    I am thrilled with the website that Jeffery Cannon designed for my business. His ability to translate my vision into a visually stunning and user-friendly website was impressive. Jeffery's expertise in web design and user experience truly shines through in his work. He was responsive, professional, and delivered the project on time. I couldn't be happier with the outcome and highly recommend Jeffery to anyone in need of a top-notch web designer.
-    </p>
-  </div>
-
-  <div className="bg-[#F7F6F3] w-[360px] p-6 flex flex-col gap-4 rounded-[12px]">
-    <div className="flex justify-between items-start">
-      <div className="flex flex-col">
-        <h1 className="font-semibold text-[16px] text-[#333]">Laura Adams</h1>
-        <p className="text-[14px] text-[#666]">produce-ui.com</p>
-      </div>
-      <div className="flex gap-2">
-        <img src={btn2} alt="" className="" />
-        <img src={btn3} alt="" className="" />
-        <img src={btn4} alt="" className="" />
-      </div>
-    </div>
-    <div className="flex gap-1">
-      <img src={Shape} alt="" className="w-5 h-5" />
-      <img src={Shape} alt="" className="w-5 h-5" />
-      <img src={Shape} alt="" className="w-5 h-5" />
-      <img src={Shape} alt="" className="w-5 h-5" />
-      <img src={Shape} alt="" className="w-5 h-5" />
-    </div>
-    <p className="text-[14px] text-[#333] leading-relaxed">
-    I had the pleasure of collaborating with Jeffery Cannon on a web design project, and I am beyond impressed with the results. Jeffery's creativity and technical expertise transformed our website into a visually stunning and highly functional platform. His understanding of user experience design and attention to detail made a significant impact on our website's performance and user engagement. Jeffery's professionalism, timely delivery.
-    </p>
-  </div>
-</div>
-
-            </section>
-            <section className='py-[30px]  justify-center items-center flex flex-col gap-y-5'>
-                <h1 className='text-[#333333] font-semibold text-3xl'>Frequently Asked Questions</h1>
-                <p className='text-[16px] text-[#4D4D4D]'>Here are answers to some common questions</p>
-               
-                <div className="flex gap-6 w-full items-start">
-  {/* FAQ Section */}
-  <div className="flex-1 space-y-4 bg-white p-[30px] rounded-[12px]">
-    {faqData.map((faq, index) => (
-      <div key={index} className="bg-[#EEEBE5] p-6 rounded-xl shadow-md">
-        <div
-          className="flex justify-between items-center cursor-pointer"
-          onClick={() => toggleFAQ(index)}
-        >
-          <h3 className="text-lg">{faq.question}</h3>
-          {openIndex === index ? (
-            <X className="w-5 h-5 text-gray-600" />
-          ) : (
-            <Plus className="w-5 h-5 text-gray-600" />
-          )}
+  <div className="flex flex-wrap justify-center gap-6 mt-6 w-full max-w-6xl">
+    {[ 
+      {
+        name: "Sarah Thompson",
+        site: "produce-ui.com",
+        review:
+          "Jeffery Cannon is an incredibly talented web designer. His attention to detail and creative flair are unmatched. He took my website from ordinary to extraordinary, capturing the essence of my brand perfectly...",
+      },
+      {
+        name: "Emily Roberts",
+        site: "produce-ui.com",
+        review:
+          "I am thrilled with the website that Jeffery Cannon designed for my business. His ability to translate my vision into a visually stunning and user-friendly website was impressive...",
+      },
+      {
+        name: "Laura Adams",
+        site: "produce-ui.com",
+        review:
+          "I had the pleasure of collaborating with Jeffery Cannon on a web design project, and I am beyond impressed with the results. Jeffery's creativity and technical expertise transformed our website...",
+      },
+    ].map((client, index) => (
+      <div
+        key={index}
+        className="bg-[#F7F6F3] w-full max-w-[360px] p-6 flex flex-col gap-4 rounded-[12px]"
+      >
+        <div className="flex justify-between items-start">
+          <div className="flex flex-col">
+            <h1 className="font-semibold text-[16px] text-[#333]">
+              {client.name}
+            </h1>
+            <p className="text-[14px] text-[#666]">{client.site}</p>
+          </div>
+          <div className="flex gap-2">
+            <img src={btn2} alt="" />
+            <img src={btn3} alt="" />
+            <img src={btn4} alt="" />
+          </div>
         </div>
-        {openIndex === index && (
-          <p className="mt-4 text-gray-700">{faq.answer}</p>
-        )}
+        <div className="flex gap-1">
+          {Array(5)
+            .fill(0)
+            .map((_, i) => (
+              <img key={i} src={Shape} alt="star" className="w-5 h-5" />
+            ))}
+        </div>
+        <p className="text-[14px] text-[#333] leading-relaxed">{client.review}</p>
       </div>
     ))}
   </div>
+</section>
+<section className="py-[30px] border-b border-[2px] flex flex-col items-center gap-y-5">
+  <h1 className="text-[#333333] font-semibold text-3xl text-center">
+    Frequently Asked Questions
+  </h1>
+  <p className="text-[16px] text-[#4D4D4D] text-center">
+    Here are answers to some common questions
+  </p>
 
-  {/* Client Testimonial (auto height) */}
-  <div className="bg-[#F7F6F3] p-6 flex flex-col items-start gap-4 rounded-[12px] max-w-sm">
-    <img 
-      src={etoile} 
-      alt="Illustration" 
-      className=" object-cover rounded-md" 
-    />
+  <div className="flex flex-col md:flex-row gap-6 w-full px-4 md:px-8 max-w-7xl">
+    {/* FAQ Section */}
+    <div className="flex-1 space-y-4 bg-white p-[20px] md:p-[30px] rounded-[12px]">
+      {faqData.map((faq, index) => (
+        <div key={index} className="bg-[#EEEBE5] p-6 rounded-xl shadow-md">
+          <div
+            className="flex justify-between items-center cursor-pointer"
+            onClick={() => toggleFAQ(index)}
+          >
+            <h3 className="text-lg font-medium">{faq.question}</h3>
+            {openIndex === index ? (
+              <X className="w-5 h-5 text-gray-600" />
+            ) : (
+              <Plus className="w-5 h-5 text-gray-600" />
+            )}
+          </div>
+          {openIndex === index && (
+            <p className="mt-4 text-gray-700">{faq.answer}</p>
+          )}
+        </div>
+      ))}
+    </div>
 
-    <h2 className="text-xl font-semibold text-[#333]">Still have any Questions ?</h2>
+    {/* Client Testimonial */}
+    <div className="bg-[#F7F6F3] p-6 flex flex-col items-start gap-4 rounded-[12px] md:max-w-sm w-full">
+      <img
+        src={etoile}
+        alt="Illustration"
+        className="w-full object-cover rounded-md"
+      />
 
-    <p className="text-[14px] text-[#333] leading-relaxed">
-    Let's collaborate to create an exceptional website that sets you apart from the competition. Contact me today to discuss your web design needs and bring your digital vision to life!
-    </p>
+      <h2 className="text-xl font-semibold text-[#333]">
+        Still have any Questions?
+      </h2>
 
-    <button className="mt-2 bg-[#5700FF] text-white px-4 py-2 rounded-md hover:bg-[#111] transition">
-      Contact Me
-    </button>
+      <p className="text-[14px] text-[#333] leading-relaxed">
+        Let's collaborate to create an exceptional website that sets you apart from the competition. Contact me today to discuss your web design needs and bring your digital vision to life!
+      </p>
+
+      <button className="mt-2 bg-[#5700FF] text-white px-4 py-2 rounded-md hover:bg-[#111] transition">
+        Contact Me
+      </button>
+    </div>
   </div>
-</div>
+</section>
 
-            </section>
       </main>
     )
 }

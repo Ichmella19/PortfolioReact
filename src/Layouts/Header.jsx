@@ -27,7 +27,7 @@ const Header = () => {
               <Link to="/">Home</Link>
             </li>
             <li className="relative cursor-pointer">
-              <Link to="/AboutMe">About Me</Link>
+              <Link to="/About">About Me</Link>
             </li>
             <li className="relative cursor-pointer">
               <Link to="/Portfolio">Portfolio</Link>
@@ -51,7 +51,7 @@ const Header = () => {
               <Link to="/" onClick={toggleMenu}>Home</Link>
             </li>
             <li>
-              <Link to="/AboutMe" onClick={toggleMenu}>About Me</Link>
+              <Link to="/About" onClick={toggleMenu}>About Me</Link>
             </li>
             <li>
               <Link to="/Portfolio" onClick={toggleMenu}>Portfolio</Link>
