@@ -31,23 +31,23 @@ export default function Footer() {
     </nav>
 
     <div className="flex gap-x-2">
-      <img src={Linkdin} alt="LinkedIn" className="w-6 h-6" />
-      <img src={Twitter} alt="Twitter" className="w-6 h-6" />
-      <img src={Rond} alt="Social Icon" className="w-6 h-6" />
+      <img src={Linkdin} alt="LinkedIn" />
+      <img src={Twitter} alt="Twitter" />
+      <img src={Rond} alt="Social Icon" />
     </div>
   </div>
 
   <div className="flex flex-col lg:flex-row justify-center items-center gap-y-4 lg:gap-x-8 px-4 py-6 text-[16px] text-[#4D4D4D] font-normal border border-[#E1DBD1] rounded-md w-full md:w-fit mx-auto mt-6">
     <div className="flex gap-x-2 items-center">
-      <img src={Mail} alt="Mail" className="w-5 h-5" />
+      <img src={Mail} alt="Mail"  />
       <p className="text-center">jefferycannon@gmail.com</p>
     </div>
     <div className="flex gap-x-2 items-center">
-      <img src={Telephone} alt="Phone" className="w-5 h-5" />
+      <img src={Telephone} alt="Phone"  />
       <p className="text-center">+91 91813 23 2309</p>
     </div>
     <div className="flex gap-x-2 items-center">
-      <img src={Location} alt="Location" className="w-5 h-5" />
+      <img src={Location} alt="Location"  />
       <p className="text-center">Somewhere in the World</p>
     </div>
   </div>

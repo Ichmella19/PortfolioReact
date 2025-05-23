@@ -9,6 +9,15 @@
 // export default Home
 import React from 'react'
 import { useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation' ;
+import Swipper from "./Swipper";
+
+import { FaLinkedin, FaFacebook, FaTwitter } from 'react-icons/fa';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from "lucide-react"; 
 import { Plus, X } from 'lucide-react'; 
 import Icon from "../assets/images/Icon.png";
 import Container from "../assets/images/container.png";
@@ -40,6 +49,7 @@ import btn3 from "../assets/images/btn3.png";
 import btn4 from "../assets/images/btn4.png";
 import etoile from "../assets/images/etoile.png";
 import Shape from "../assets/images/Shape.png";
+import { Star } from 'lucide-react';
 const faqData = [
     {
       question: "Can you work with clients remotely?",
@@ -94,7 +104,47 @@ const Section = [
         description: "Proficiency in the fundamental principles of design, such as layout, color theory, typography, and visual hierarchy.",
       },
 ]
-const Home= () => {
+
+const testimoni = [
+  {
+    name: 'Sarah Thomp',
+    website: 'produce-ui.com',
+    text: 'Jeffery Cannon is an incredibly talented web designer. His attention to detail and creative flair are unmatched. He took my website from ordinary to extraordinary, capturing the essence of my brand perfectly. Working with Jeffery was a breeze, as he listened to my needs and provided expert guidance throughout the design process. I highly recommend Jeffery for anyone looking to elevate their online presence with .',
+  },
+  {
+    name: 'Elcy Tognide',
+    website: 'ichemella.com',
+    text: 'Jeffery Cannon is an incredibly talented web designer. His attention to detail and creative flair are unmatched. He took my website from ordinary to extraordinary, capturing the essence of my brand perfectly. Working with Jeffery was a breeze, as he listened to my needs and provided expert guidance throughout the design process. I highly recommend Jeffery for anyone looking to elevate their online presence with .',
+  },
+ 
+  {
+    name: 'Emily Roberts',
+    website: 'produce-ui.com',
+    text: 'I am thrilled with the website that Jeffery Cannon . His ability to translate my vision into a visually stunning and user-friendly website was impressive. Jefferys expertise in web design and user experience truly shines through in his work. He was responsive, professional, and delivered the project on time. I couldnt be happier with the outcome and highly recommend Jeffery to anyone in need of a top-notch web designer .',
+  },
+  {
+    name: 'Laura Adams',
+    website: 'produce-ui.com',
+    text: 'I had the pleasure of collaborating with Jeffery Cannon on a web design project, and I am beyond impressed with the results. Jefferys creativity and technical expertise transformed our website into a visually stunning and highly functional platform. His understanding of user experience design and attention to detail made a significant impact on our websites performance and user engagement. Jefferys professionalism, timely delivery.',
+  },
+  {
+    name: 'James Miller',
+    website: 'produce-ui.com',
+    text: 'Jeffery Cannon is an incredibly talented web designer. His attention to detail and creative flair are unmatched. He took my website from ordinary to extraordinary, capturing the essence of my brand perfectly. Working with Jeffery was a breeze, as he listened to my needs and provided expert guidance throughout the design process. I highly recommend Jeffery for anyone looking to elevate their online presence with .',
+  },
+  {
+    name: 'Nina Patel',
+    website: 'produce-ui.com',
+    text: 'I am thrilled with the website that Jeffery Cannon . His ability to translate my vision into a visually stunning and user-friendly website was impressive. Jefferys expertise in web design and user experience truly shines through in his work. He was responsive, professional, and delivered the project on time. I couldnt be happier with the outcome and highly recommend Jeffery to anyone in need of a top-notch web designer .',
+  },
+  // Ajoute plus si besoin
+];
+
+ const Home= () => {
+
+
+  
+
     const [openIndex, setOpenIndex] = useState(null);
 
     const toggleFAQ = (index) => {
@@ -156,7 +206,6 @@ const Home= () => {
   </div>
 </section>
 
-          
 <section className="py-[30px] px-4 sm:px-6 flex flex-col items-center justify-center gap-y-5">
   <h1 className="text-[#333333] font-semibold text-3xl text-center">
     Creative Skills
@@ -218,6 +267,7 @@ const Home= () => {
 </div>
 
             </section>
+           
             <section className="py-[30px] flex flex-col items-center gap-y-5">
   <h1 className="text-[#333333] font-semibold text-3xl text-center">My Works</h1>
   <p className="text-[16px] text-[#4D4D4D] text-center px-4">
@@ -230,10 +280,10 @@ const Home= () => {
       <p className="text-[#333333] text-[16px]">Z - Aura Perfume Website Design</p>
       <img src={Aura} alt="" className="w-full h-[240px] object-cover rounded-[8px]" />
       <div className="flex gap-x-4 flex-wrap">
-        <img src={Aura1} alt="" className="w-[60px] h-[45px] object-cover rounded-[4px]" />
-        <img src={Aura2} alt="" className="w-[60px] h-[45px] object-cover rounded-[4px]" />
-        <img src={Aura3} alt="" className="w-[60px] h-[45px] object-cover rounded-[4px]" />
-        <img src={Aura4} alt="" className="w-[60px] h-[45px] object-cover rounded-[4px]" />
+        <img src={Aura1} alt="" className="w-[55px] h-[45px] object-cover rounded-[4px]" />
+        <img src={Aura2} alt="" className="w-[55px] h-[45px] object-cover rounded-[4px]" />
+        <img src={Aura3} alt="" className="w-[55px] h-[45px] object-cover rounded-[4px]" />
+        <img src={Aura4} alt="" className="w-[55px] h-[45px] object-cover rounded-[4px]" />
       </div>
     </div>
 
@@ -242,10 +292,10 @@ const Home= () => {
       <p className="text-[#333333] text-[16px]">Forhelp Charity Website Design</p>
       <img src={Website} alt="" className="w-full h-[240px] object-cover rounded-[8px]" />
       <div className="flex gap-x-4 flex-wrap">
-        <img src={Website1} alt="" className="w-[60px] h-[45px] object-cover rounded-[4px]" />
-        <img src={Website2} alt="" className="w-[60px] h-[45px] object-cover rounded-[4px]" />
-        <img src={Website3} alt="" className="w-[60px] h-[45px] object-cover rounded-[4px]" />
-        <img src={Website4} alt="" className="w-[60px] h-[45px] object-cover rounded-[4px]" />
+        <img src={Website1} alt="" className="w-[55px] h-[45px] object-cover rounded-[4px]" />
+        <img src={Website2} alt="" className="w-[55px] h-[45px] object-cover rounded-[4px]" />
+        <img src={Website3} alt="" className="w-[55px] h-[45px] object-cover rounded-[4px]" />
+        <img src={Website4} alt="" className="w-[55px] h-[45px] object-cover rounded-[4px]" />
       </div>
     </div>
 
@@ -254,10 +304,10 @@ const Home= () => {
       <p className="text-[#333333] text-[16px]">Skill Bridge Website Design</p>
       <img src={Skill} alt="" className="w-full h-[240px] object-cover rounded-[8px]" />
       <div className="flex gap-x-4 flex-wrap">
-        <img src={Skill1} alt="" className="w-[60px] h-[45px] object-cover rounded-[4px]" />
-        <img src={Skill2} alt="" className="w-[60px] h-[45px] object-cover rounded-[4px]" />
-        <img src={Skill3} alt="" className="w-[60px] h-[45px] object-cover rounded-[4px]" />
-        <img src={Skill4} alt="" className="w-[60px] h-[45px] object-cover rounded-[4px]" />
+        <img src={Skill1} alt="" className="w-[55px] h-[45px] object-cover rounded-[4px]" />
+        <img src={Skill2} alt="" className="w-[55px] h-[45px] object-cover rounded-[4px]" />
+        <img src={Skill3} alt="" className="w-[55px] h-[45px] object-cover rounded-[4px]" />
+        <img src={Skill4} alt="" className="w-[55px] h-[45px] object-cover rounded-[4px]" />
       </div>
     </div>
   </div>
@@ -274,66 +324,67 @@ const Home= () => {
   <p className="text-[16px] text-[#4D4D4D] text-center">
     Here's what some of my satisfied clients have to say about my work
   </p>
-
-  <div className="flex justify-between items-center w-full max-w-6xl">
+  <div className="w-full px-4 py-8 rounded-xl">
+  <div className="flex justify-between items-center w-full max-w-6xl mx-auto mb-6">
     <p className="text-sm sm:text-base">37 Total Reviews</p>
-    <div className="flex gap-x-2">
-      <img src={btn} alt="left" />
-      <img src={btn1} alt="right" />
+    <div className="flex space-x-2">
+      <button className="prev">
+        <img src={btn} alt="left" className="w-8 h-8 text-gray-700" />
+      </button>
+      <button className="next">
+        <img src={btn1} alt="right" className="w-8 h-8 text-gray-700" />
+      </button>
     </div>
   </div>
 
-  <div className="flex flex-wrap justify-center gap-6 mt-6 w-full max-w-6xl">
-    {[ 
-      {
-        name: "Sarah Thompson",
-        site: "produce-ui.com",
-        review:
-          "Jeffery Cannon is an incredibly talented web designer. His attention to detail and creative flair are unmatched. He took my website from ordinary to extraordinary, capturing the essence of my brand perfectly...",
-      },
-      {
-        name: "Emily Roberts",
-        site: "produce-ui.com",
-        review:
-          "I am thrilled with the website that Jeffery Cannon designed for my business. His ability to translate my vision into a visually stunning and user-friendly website was impressive...",
-      },
-      {
-        name: "Laura Adams",
-        site: "produce-ui.com",
-        review:
-          "I had the pleasure of collaborating with Jeffery Cannon on a web design project, and I am beyond impressed with the results. Jeffery's creativity and technical expertise transformed our website...",
-      },
-    ].map((client, index) => (
-      <div
-        key={index}
-        className="bg-[#F7F6F3] w-full max-w-[360px] p-6 flex flex-col gap-4 rounded-[12px]"
-      >
-        <div className="flex justify-between items-start">
-          <div className="flex flex-col">
-            <h1 className="font-semibold text-[16px] text-[#333]">
-              {client.name}
-            </h1>
-            <p className="text-[14px] text-[#666]">{client.site}</p>
+  <Swiper
+    modules={[Navigation]}
+    spaceBetween={25}
+    slidesPerView={3}
+    navigation={{
+      prevEl: '.prev',
+      nextEl: '.next',
+    }}
+    speed={600}
+    breakpoints={{
+      0: { slidesPerView: 1 },
+      768: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 },
+    }}
+  >
+    {testimoni.map((review, index) => (
+      <SwiperSlide key={index} className="flex justify-center bg-[#F7F6F3]">
+        <div className=" bg-[#F7F6F3] w-full max-w-[360px] min-h-[280px] p-6 flex flex-col justify-between gap-4 rounded-[24px] shadow-md">
+          <div className="flex justify-between items-start">
+            <div className="flex flex-col">
+              <h3 className="font-bold text-gray-800">{review.name}</h3>
+              <p className="text-sm text-gray-500 mb-1">{review.website}</p>
+            </div>
+            <div className="flex gap-1">
+              <img src={btn2} alt="" className="w-4 h-4" />
+              <img src={btn3} alt="" className="w-4 h-4" />
+              <img src={btn4} alt="" className="w-4 h-4" />
+            </div>
           </div>
-          <div className="flex gap-2">
-            <img src={btn2} alt="" />
-            <img src={btn3} alt="" />
-            <img src={btn4} alt="" />
-          </div>
+
+          <div className="flex text-purple-600 mb-3">
+  {Array(5).fill(0).map((_, i) => (
+    <Star key={i} className="fill-current" />
+  ))}
+</div>
+
+
+
+          <p className="text-[14px] text-start text-gray-700">{review.text}</p>
         </div>
-        <div className="flex gap-1">
-          {Array(5)
-            .fill(0)
-            .map((_, i) => (
-              <img key={i} src={Shape} alt="star" className="w-5 h-5" />
-            ))}
-        </div>
-        <p className="text-[14px] text-[#333] leading-relaxed">{client.review}</p>
-      </div>
+      </SwiperSlide>
     ))}
-  </div>
+  </Swiper>
+</div>
+
+  
 </section>
-<section className="py-[30px] border-b border-[2px] flex flex-col items-center gap-y-5">
+<section className="py-[30px]  flex flex-col items-center gap-y-5">
   <h1 className="text-[#333333] font-semibold text-3xl text-center">
     Frequently Asked Questions
   </h1>
@@ -342,49 +393,43 @@ const Home= () => {
   </p>
 
   <div className="flex flex-col md:flex-row gap-6 w-full px-4 md:px-8 max-w-7xl">
-    {/* FAQ Section */}
-    <div className="flex-1 space-y-4 bg-white p-[20px] md:p-[30px] rounded-[12px]">
-      {faqData.map((faq, index) => (
-        <div key={index} className="bg-[#EEEBE5] p-6 rounded-xl shadow-md">
-          <div
-            className="flex justify-between items-center cursor-pointer"
-            onClick={() => toggleFAQ(index)}
-          >
-            <h3 className="text-lg font-medium">{faq.question}</h3>
-            {openIndex === index ? (
-              <X className="w-5 h-5 text-gray-600" />
-            ) : (
-              <Plus className="w-5 h-5 text-gray-600" />
-            )}
-          </div>
-          {openIndex === index && (
-            <p className="mt-4 text-gray-700">{faq.answer}</p>
+  {/* FAQ Section */}
+  <div className="space-y-4 bg-white p-[20px] md:p-[30px] rounded-[12px] w-full md:w-auto">
+    {faqData.map((faq, index) => (
+      <div key={index} className="bg-[#EEEBE5] p-6 rounded-xl shadow-md">
+        <div
+          className="flex justify-between items-center cursor-pointer"
+          onClick={() => toggleFAQ(index)}
+        >
+          <h3 className="text-lg font-medium">{faq.question}</h3>
+          {openIndex === index ? (
+            <X className="w-5 h-5 text-gray-600" />
+          ) : (
+            <Plus className="w-5 h-5 text-gray-600" />
           )}
         </div>
-      ))}
-    </div>
-
-    {/* Client Testimonial */}
-    <div className="bg-[#F7F6F3] p-6 flex flex-col items-start gap-4 rounded-[12px] md:max-w-sm w-full">
-      <img
-        src={etoile}
-        alt="Illustration"
-        className="w-full object-cover rounded-md"
-      />
-
-      <h2 className="text-xl font-semibold text-[#333]">
-        Still have any Questions?
-      </h2>
-
-      <p className="text-[14px] text-[#333] leading-relaxed">
-        Let's collaborate to create an exceptional website that sets you apart from the competition. Contact me today to discuss your web design needs and bring your digital vision to life!
-      </p>
-
-      <button className="mt-2 bg-[#5700FF] text-white px-4 py-2 rounded-md hover:bg-[#111] transition">
-        Contact Me
-      </button>
-    </div>
+        {openIndex === index && (
+          <p className="mt-4 text-gray-700">{faq.answer}</p>
+        )}
+      </div>
+    ))}
   </div>
+
+  {/* Client Testimonial */}
+  <div className="bg-[#F7F6F3] h-[350px] p-6 flex flex-col items-start gap-4 rounded-[12px] md:max-w-sm w-full">
+    <img src={etoile} alt="Illustration" />
+    <h2 className="text-xl font-semibold text-[#333]">
+      Still have any Questions?
+    </h2>
+    <p className="text-[14px] text-[#333] leading-relaxed">
+      Let's collaborate to create an exceptional website that sets you apart from the competition. Contact me today to discuss your web design needs and bring your digital vision to life!
+    </p>
+    <button className="mt-2 bg-[#5700FF] text-white px-4 py-2 rounded-md hover:bg-[#111] transition">
+      Contact Me
+    </button>
+  </div>
+</div>
+<Swipper />
 </section>
 
       </main>

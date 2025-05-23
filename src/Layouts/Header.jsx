@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Icon from "../assets/images/Icon.png";
 import { Menu, X } from "lucide-react";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,18 +24,55 @@ const Header = () => {
         {/* Navigation desktop */}
         <nav className="hidden lg:flex">
           <ul className="flex flex-row gap-10 font-medium text-[16px] items-center text-[#333333]">
-            <li className="relative cursor-pointer">
-              <Link to="/">Home</Link>
-            </li>
-            <li className="relative cursor-pointer">
-              <Link to="/About">About Me</Link>
-            </li>
-            <li className="relative cursor-pointer">
-              <Link to="/Portfolio">Portfolio</Link>
-            </li>
-            <li className="relative cursor-pointer">
-              <Link to="/Contact">Contact Me</Link>
-            </li>
+          <li className="relative cursor-pointer  transition-all duration-300">
+  <NavLink
+    to="/"
+    className={({ isActive }) =>
+      isActive
+        ? "bg-white py-2 px-3 rounded-[12px] text-black"
+        : ""
+    }
+  >
+    Home
+  </NavLink>
+</li>
+
+<li className="relative cursor-pointer">
+  <NavLink
+    to="/About"
+    className={({ isActive }) =>
+      isActive
+        ? "bg-white py-2 px-3 rounded-[12px] text-black"
+        : ""
+    }
+  >
+  About
+  </NavLink>
+</li>
+<li className="relative cursor-pointer">
+  <NavLink
+    to="/portfolio"
+    className={({ isActive }) =>
+      isActive
+        ? "bg-white py-2 px-3 rounded-[12px] text-black"
+        : ""
+    }
+  >
+   Portfolio
+  </NavLink>
+</li>
+<li className="relative cursor-pointer">
+  <NavLink
+    to="/Contact"
+    className={({ isActive }) =>
+      isActive
+        ? "bg-white py-2 px-3 rounded-[12px] text-black"
+        : ""
+    }
+  >
+   Contact Me
+  </NavLink>
+</li>
             <button className="flex gap-x-2 p-3 bg-[#5700FF] text-white rounded-[8px]">
               <img src={Icon} alt="" />
               <p className="text-[16px]">Book a call</p>

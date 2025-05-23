@@ -1,21 +1,21 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; 
 import Layout from "./Layouts/Layout";
 import Home from "./Composants/Home";
 import About from "./Composants/About";
-
+import Portfolio from "./Composants/Portfolio";
+import Contact from "./Composants/Contact";
+import Swipper from "./Composants/Swipper";
 const App = () => {
   return (
     <Router> 
-      <Routes >
+      <Routes>
         <Route path="/" element={<Layout />}>
-         
-        <Route path="/" element={<Home />} />
-        <Route path="/About" element={<About />} />
-        
+          <Route path="/" element={<Home />} />
+          <Route path="/About" element={<About />} />
+          <Route path="/Portfolio" element={<Portfolio />} />
+          <Route path="/Swipper" element={<Swipper />} />
+          <Route path="/Contact" element={<Contact />} />
         </Route>
-
-         {/* <Route path="/Inscription" element={<Inscription />}/> 
-         <Route path="/Connexion" element={<Connexion />}/>  */}
       </Routes>
     </Router>
   );
