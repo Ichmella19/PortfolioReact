@@ -152,18 +152,18 @@ const testimoni = [
     };
   
     return (
-      <main className='w-full h-full bg-[#EEEBE5] mt-[60px] min-h-screen overflow-hidden gap-x-8  px-[100px] font-manrope '>
-     <section className="md:flex py-[100px] relative">
+      <main className='w-full h-full bg-[#EEEBE5] mt-[60px] min-h-screen overflow-hidden  px-[30px] md:px-[100px] font-manrope '>
+     <section className="md:flex md:py-[100px] py-[50px] relative">
   <div className="flex flex-col gap-y-7 text-start relative z-10">
     <span className="w-[110px] px-3 py-2 text-[#4D4D4D] bg-[#F5F3F0] rounded-[13px]">
       Hello There
     </span>
 
-    <h1 className="font-medium text-4xl w-[500px]">
+    <h1 className="font-medium text-4xl md:w-[500px]">
       Jeffery Cannon Welcome’s You!
     </h1>
 
-    <p className="text-[#4D4D4D] w-[600px] text-[14px]">
+    <p className="text-[#4D4D4D] md:w-[600px] text-[14px]">
       I am a passionate and experienced web designer, dedicated to creating
       visually stunning and highly functional websites. Explore my portfolio to
       see the power of effective design in action
@@ -178,7 +178,7 @@ const testimoni = [
     </div>
 
     {/* div avec z-index faible */}
-    <div className="bg-white p-4 flex gap-x-14 rounded-[12px] w-[700px] z-0 relative ">
+    <div className="bg-white p-4 md:flex gap-x-14 rounded-[12px] md:w-[700px] z-0 relative ">
       <div className="flex flex-col text-start">
         <h1 className="font-semibold text-[23px]">
           55 <span className="text-[#5700FF]">+</span>
@@ -201,7 +201,7 @@ const testimoni = [
   </div>
 
   {/* image avec z-index plus haut */}
-  <div className="relative z-20 -ml-10">
+  <div className="relative z-20 md:-ml-10 mt-[30px] md:mt-0 ">
     <img src={Container} alt="" />
   </div>
 </section>
@@ -338,48 +338,54 @@ const testimoni = [
   </div>
 
   <Swiper
-    modules={[Navigation]}
-    spaceBetween={25}
-    slidesPerView={3}
-    navigation={{
-      prevEl: '.prev',
-      nextEl: '.next',
-    }}
-    speed={600}
-    breakpoints={{
-      0: { slidesPerView: 1 },
-      768: { slidesPerView: 2 },
-      1024: { slidesPerView: 3 },
-    }}
-  >
-    {testimoni.map((review, index) => (
-      <SwiperSlide key={index} className="flex justify-center bg-[#F7F6F3]">
-        <div className=" bg-[#F7F6F3] w-full max-w-[360px] min-h-[280px] p-6 flex flex-col justify-between gap-4 rounded-[24px] shadow-md">
-          <div className="flex justify-between items-start">
-            <div className="flex flex-col">
-              <h3 className="font-bold text-gray-800">{review.name}</h3>
-              <p className="text-sm text-gray-500 mb-1">{review.website}</p>
-            </div>
-            <div className="flex gap-1">
-              <img src={btn2} alt="" className="w-4 h-4" />
-              <img src={btn3} alt="" className="w-4 h-4" />
-              <img src={btn4} alt="" className="w-4 h-4" />
-            </div>
+  modules={[Navigation]}
+  spaceBetween={25}
+  slidesPerView={3}
+  navigation={{
+    prevEl: '.prev',
+    nextEl: '.next',
+  }}
+  speed={600}
+  breakpoints={{
+    0: { slidesPerView: 1 },
+    768: { slidesPerView: 2 },
+    1024: { slidesPerView: 3 },
+  }}
+  className="px-2" // padding horizontal réduit sur mobile
+>
+  {testimoni.map((review, index) => (
+    <SwiperSlide
+      key={index}
+      className="flex justify-center bg-[#F7F6F3] mt-10"
+      style={{ backgroundColor: '#F7F6F3' }}
+    >
+      <div className="bg-[#F7F6F3] w-full max-w-[360px] md:max-w-[360px] min-h-[280px] p-4 md:p-6 flex flex-col justify-between gap-4 rounded-[24px] shadow-md">
+        <div className="flex justify-between items-start">
+          <div className="flex flex-col">
+            <h3 className="font-bold text-gray-800 text-[14px] md:text-[16px]">{review.name}</h3>
+            <p className="text-sm text-gray-500 mb-1">{review.website}</p>
           </div>
-
-          <div className="flex text-purple-600 mb-3">
-  {Array(5).fill(0).map((_, i) => (
-    <Star key={i} className="fill-current" />
-  ))}
-</div>
-
-
-
-          <p className="text-[14px] text-start text-gray-700">{review.text}</p>
+          <div className="flex gap-1">
+            <img src={btn2} alt="" className="w-8 h-8 md:w-full md:h-full" />
+            <img src={btn3} alt="" className="w-8 h-8 md:w-full md:h-full" />
+            <img src={btn4} alt="" className="w-8 h-8 md:w-full md:h-full" />
+          </div>
         </div>
-      </SwiperSlide>
-    ))}
-  </Swiper>
+
+        <div className="flex text-purple-600 mb-3">
+          {Array(5)
+            .fill(0)
+            .map((_, i) => (
+              <Star key={i} className="fill-current" />
+            ))}
+        </div>
+
+        <p className="text-[14px] md:text-[15px] text-start text-gray-700">{review.text}</p>
+      </div>
+    </SwiperSlide>
+  ))}
+</Swiper>
+
 </div>
 
   
@@ -401,7 +407,7 @@ const testimoni = [
           className="flex justify-between items-center cursor-pointer"
           onClick={() => toggleFAQ(index)}
         >
-          <h3 className="text-lg font-medium">{faq.question}</h3>
+          <h3 className="md:text-lg text-[16px] font-medium">{faq.question}</h3>
           {openIndex === index ? (
             <X className="w-5 h-5 text-gray-600" />
           ) : (
@@ -409,7 +415,7 @@ const testimoni = [
           )}
         </div>
         {openIndex === index && (
-          <p className="mt-4 text-gray-700">{faq.answer}</p>
+          <p className="mt-4 text-gray-700 text-[16px]">{faq.answer}</p>
         )}
       </div>
     ))}

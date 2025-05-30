@@ -70,7 +70,7 @@ const faqData = [
        };
      
      return (
-       <main className='w-full min-h-screen bg-[#EEEBE5] mt-[60px] px-[100px] font-manrope overflow-hidden'>
+       <main className='w-full min-h-screen bg-[#EEEBE5] mt-[60px] md:px-[100px] px-[30px] font-manrope overflow-hidden'>
          
          <section className="flex flex-col py-[60px] px-4 sm:px-6 md:px-10 justify-center rounded-[12px] items-center relative w-full max-w-[1200px] mx-auto bg-[#F7F6F3] shadow-md">
   <img src={Contain} alt="icon" className="w-12 sm:w-16 md:w-20" />
@@ -249,7 +249,7 @@ const faqData = [
           className="flex justify-between items-center cursor-pointer"
           onClick={() => toggleFAQ(index)}
         >
-          <h3 className="text-lg font-medium">{faq.question}</h3>
+          <h3 className="md:text-lg text-[16px] font-medium">{faq.question}</h3>
           {openIndex === index ? (
             <X className="w-5 h-5 text-gray-600" />
           ) : (
@@ -257,7 +257,7 @@ const faqData = [
           )}
         </div>
         {openIndex === index && (
-          <p className="mt-4 text-gray-700">{faq.answer}</p>
+          <p className="mt-4 text-gray-700 text-[16px]">{faq.answer}</p>
         )}
       </div>
     ))}

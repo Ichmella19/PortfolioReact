@@ -5,9 +5,11 @@ import About from "./Composants/About";
 import Portfolio from "./Composants/Portfolio";
 import Contact from "./Composants/Contact";
 import Swipper from "./Composants/Swipper";
+import Scroll from "./Composants/Scroll";
 const App = () => {
   return (
     <Router> 
+         <Scroll />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="/" element={<Home />} />

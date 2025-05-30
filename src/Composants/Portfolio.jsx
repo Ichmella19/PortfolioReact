@@ -202,7 +202,7 @@ const banks = [
 ];
 const Portfolio = () => {
   return (
-    <main className='w-full min-h-screen bg-[#EEEBE5] mt-[60px] px-[100px] font-manrope'>
+    <main className='w-full min-h-screen bg-[#EEEBE5] mt-[60px]  md:px-[100px] px-[30px] font-manrope'>
 
       {/* Portfolio Section */}
       <section className="flex flex-col py-[60px] px-[20px] justify-center rounded-[12px] items-center relative w-full max-w-[1200px] mx-auto bg-[#F7F6F3] shadow-md">

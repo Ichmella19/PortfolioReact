@@ -19,18 +19,11 @@ export default function Swipper() {
 
   return (
     <section className="min-h-screen relative flex items-center justify-center px-8 py-16 ">
-      {/* Flèche gauche */}
-      <div className="swiper-button-prev z-10 cursor-pointer text-4xl text-black absolute left-4 top-1/2 -translate-y-1/2">
-        &#8592;
-      </div>
-
+    
       {/* Swiper */}
       <Swiper
         modules={[Navigation]}
-        navigation={{
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        }}
+        navigation
         slidesPerView={3}
         spaceBetween={30}
         centeredSlides={true}
@@ -64,12 +57,7 @@ export default function Swipper() {
             </div>
           </SwiperSlide>
         ))}
-      </Swiper>
-
-      {/* Flèche droite */}
-      <div className="swiper-button-next z-10 cursor-pointer text-4xl text-black absolute right-4 top-1/2 -translate-y-1/2">
-        &#8594;
-      </div>
+      </Swiper> 
     </section>
   );
 }

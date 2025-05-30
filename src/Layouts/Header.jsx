@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Icon from "../assets/images/Icon.png";
 import { Menu, X } from "lucide-react";
-import { NavLink } from "react-router-dom";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,55 +23,46 @@ const Header = () => {
         {/* Navigation desktop */}
         <nav className="hidden lg:flex">
           <ul className="flex flex-row gap-10 font-medium text-[16px] items-center text-[#333333]">
-          <li className="relative cursor-pointer  transition-all duration-300">
-  <NavLink
-    to="/"
-    className={({ isActive }) =>
-      isActive
-        ? "bg-white py-2 px-3 rounded-[12px] text-black"
-        : ""
-    }
-  >
-    Home
-  </NavLink>
-</li>
-
-<li className="relative cursor-pointer">
-  <NavLink
-    to="/About"
-    className={({ isActive }) =>
-      isActive
-        ? "bg-white py-2 px-3 rounded-[12px] text-black"
-        : ""
-    }
-  >
-  About
-  </NavLink>
-</li>
-<li className="relative cursor-pointer">
-  <NavLink
-    to="/portfolio"
-    className={({ isActive }) =>
-      isActive
-        ? "bg-white py-2 px-3 rounded-[12px] text-black"
-        : ""
-    }
-  >
-   Portfolio
-  </NavLink>
-</li>
-<li className="relative cursor-pointer">
-  <NavLink
-    to="/Contact"
-    className={({ isActive }) =>
-      isActive
-        ? "bg-white py-2 px-3 rounded-[12px] text-black"
-        : ""
-    }
-  >
-   Contact Me
-  </NavLink>
-</li>
+            <li className="relative cursor-pointer transition-all duration-300">
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  isActive ? "bg-white py-2 px-3 rounded-[12px] text-black" : ""
+                }
+              >
+                Home
+              </NavLink>
+            </li>
+            <li className="relative cursor-pointer">
+              <NavLink
+                to="/About"
+                className={({ isActive }) =>
+                  isActive ? "bg-white py-2 px-3 rounded-[12px] text-black" : ""
+                }
+              >
+                About
+              </NavLink>
+            </li>
+            <li className="relative cursor-pointer">
+              <NavLink
+                to="/portfolio"
+                className={({ isActive }) =>
+                  isActive ? "bg-white py-2 px-3 rounded-[12px] text-black" : ""
+                }
+              >
+                Portfolio
+              </NavLink>
+            </li>
+            <li className="relative cursor-pointer">
+              <NavLink
+                to="/Contact"
+                className={({ isActive }) =>
+                  isActive ? "bg-white py-2 px-3 rounded-[12px] text-black" : ""
+                }
+              >
+                Contact Me
+              </NavLink>
+            </li>
             <button className="flex gap-x-2 p-3 bg-[#5700FF] text-white rounded-[8px]">
               <img src={Icon} alt="" />
               <p className="text-[16px]">Book a call</p>
@@ -81,31 +71,41 @@ const Header = () => {
         </nav>
       </div>
 
-      {/* Menu mobile */}
-      {isOpen && (
-        <div className="lg:hidden bg-[#EEEBE5] w-full px-6 py-4">
-          <ul className="flex flex-col gap-4 text-[#333333] text-[16px] font-medium">
-            <li>
-              <Link to="/" onClick={toggleMenu}>Home</Link>
-            </li>
-            <li>
-              <Link to="/About" onClick={toggleMenu}>About Me</Link>
-            </li>
-            <li>
-              <Link to="/Portfolio" onClick={toggleMenu}>Portfolio</Link>
-            </li>
-            <li>
-              <Link to="/Contact" onClick={toggleMenu}>Contact Me</Link>
-            </li>
-            <li>
-              <button className="flex gap-x-2 p-3 bg-[#5700FF] text-white rounded-[8px]">
-                <img src={Icon} alt="icon" />
-                <p className="text-[16px]">Book a call</p>
-              </button>
-            </li>
-          </ul>
-        </div>
-      )}
+      {/* Menu mobile avec animation et style violet */}
+      <div
+        className={`lg:hidden fixed top-[64px] left-0 w-full z-40 bg-[#5700FF] text-white px-6 py-6 transform transition-transform duration-300 ease-in-out ${
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        <ul className="flex flex-col gap-6 text-[16px] font-medium">
+          <li>
+            <Link to="/" onClick={toggleMenu}>
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/About" onClick={toggleMenu}>
+              About Me
+            </Link>
+          </li>
+          <li>
+            <Link to="/Portfolio" onClick={toggleMenu}>
+              Portfolio
+            </Link>
+          </li>
+          <li>
+            <Link to="/Contact" onClick={toggleMenu}>
+              Contact Me
+            </Link>
+          </li>
+          <li>
+            <button className="flex gap-x-2 p-3 bg-white text-[#5700FF] rounded-[8px]">
+              <img src={Icon} alt="icon" />
+              <p className="text-[16px]">Book a call</p>
+            </button>
+          </li>
+        </ul>
+      </div>
     </header>
   );
 };
