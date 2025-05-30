@@ -63,6 +63,7 @@ const timelineData = [
   
     },
    
+   
   ];
   
 const About= () => {
@@ -108,84 +109,77 @@ const About= () => {
   Lorem ipsum dolor sit amet consectetur. Nisl ut neque tortor nulla felis nunc. Sit ac sed sed pulvinar sit purus morbi. Elit amet sed velit auctor urna vitae nam ultricies massa.
   </p>
 
-  <div className="relative max-w-6xl mx-auto px-4">
-  {/* Trait violet central visible uniquement sur medium et plus */}
-  <div className="hidden md:block absolute top-0 bottom-0 left-1/2 w-[2px] bg-purple-400 z-0"></div>
+  <div className="relative max-w-6xl mx-auto mt-[40%] md:mt-0">
+    {/* Trait violet central légèrement décalé */}
+    <div className="hidden md:block absolute top-0 bottom-0 left-[52%] w-[2px] bg-purple-400 z-0 h-[1100px]"></div>
 
-  {timelineData.map((item, index) => {
-    const isLeft = index % 2 === 0;
-
-    return (
-      <div
-        key={index}
-        className="relative flex flex-col md:flex-row items-center justify-between mb-20"
-      >
-        {/* Bloc gauche (ou empilé en mobile) */}
-        <div
-          className={`w-full md:w-5/12 px-4 ${
-            isLeft ? "order-1 md:order-1" : "order-3 md:order-3"
-          }`}
-        >
-          {isLeft ? (
-           <div className="relative bg-white rounded-xl shadow-md p-5 flex flex-col sm:flex-row gap-4 items-center sm:items-start before:content-[''] before:absolute before:left-0 before:top-5 before:border-y-[10px] before:border-l-[10px] before:border-y-transparent before:border-l-white before:-translate-x-full max-w-full overflow-hidden">
-           <p className="text-[13px] sm:text-[14px] text-gray-700 text-center sm:text-left">
-             {item.description}
-           </p>
-           <img
-             src={item.ima}
-             alt=""
-             className="w-20 h-20 sm:w-13 sm:h-13 object-contain"
-           />
-         </div>
-         
-          ) : (
-            <div className="text-center md:text-right text-sm bg-white px-4 py-2 w-full md:w-[200px] mt-4 md:mt-[15%] rounded shadow inline-block md:ml-[65%]">
+    {/* Timeline items */}
+    {timelineData.map((item, index) => {
+      const isLeft = index % 2 === 0;
+      const isRight = index % 2 === 0;
+      return (
+        <div key={index} className="flex flex-col md:flex-row items-center justify-between mb-20">
+          {/* Bloc gauche */}
+          <div className={`md:w-5/12 w-full px-4 ${isLeft ? "order-1" : "order-3"}`}>
+            {isLeft ? (
+             <div className="bg-white justify-center rounded-xl shadow-md p-5 md:flex gap-4 items-center mt-[50%] md:mt-0 -mr-[10%]">
+             <img
+               src={item.ima}
+               alt=""
+               className="w-13 h-13 order-1 md:order-2 mx-auto md:mx-0x"
+             />
+             <p className="text-[14px] text-gray-700 order-2 md:order-1 text-center md:text-start">
+               {item.description}
+             </p>
+           </div>
+           
+            ) : (
+              <div className="text-center md:text-right md:ml-[65%] mt-[50%] text-sm bg-white px-4 py-2 w-[200px] md:mt-[15%]   rounded shadow md:inline-block">
               {item.title}
             </div>
-          )}
-        </div>
+            )}
+          </div>
 
-        {/* Icône + année au centre */}
-        <div className="relative flex flex-col items-center z-10 my-6 md:absolute md:left-1/2 md:transform md:-translate-x-1/2">
-          {/* Cercle image */}
-          <div className="w-14 h-14 border-[5px] cursor-pointer rounded-full border-gray-100 shadow-lg flex items-center justify-center">
-            <div className="w-12 h-12 rounded-full border-4 border-white shadow-lg bg-white flex items-center justify-center">
+          {/* Icône + année au centre sur le trait */}
+          <div className="absolute left-[52%] transform -translate-x-1/2 flex flex-col items-center z-10">
+          <div className='w-14 h-14 border-[5px] md:mt-[100%] mt-[50%] cursor-pointer rounded-full border-gray-100 shadow-lg flex items-center justify-center'>
+          <div className="w-12 h-12 rounded-full border-4 border-white shadow-lg bg-white flex items-center justify-center">
               <img src={item.img} alt="" className="w-5 h-5 rounded-full" />
             </div>
           </div>
-
-          {/* Année */}
-          <span className="mt-2 text-[14px] bg-white px-2 py-1 rounded shadow">
-            {item.year}
-          </span>
-        </div>
-
-        {/* Bloc droit (ou empilé en mobile) */}
-        <div
-          className={`w-full md:w-5/12 px-4 ${
-            !isLeft ? "order-1 md:order-3" : "order-3 md:order-1"
-          }`}
-        >
-          {!isLeft ? (
-            <div className="relative bg-white rounded-xl shadow-md p-5 flex flex-col sm:flex-row gap-4 items-center sm:items-start before:content-[''] before:absolute before:left-0 before:top-5 before:border-y-[10px] before:border-l-[10px] before:border-y-transparent before:border-l-white before:-translate-x-full max-w-full overflow-hidden">
-            <p className="text-[13px] sm:text-[14px] text-gray-700 text-center sm:text-left">
-              {item.description}
-            </p>
-            <img
-              src={item.ima}
-              alt=""
-              className="w-20 h-20 sm:w-13 sm:h-13 object-contain"
-            />
+           
+            <span className="-mt-[90%] absolute text-[14px] bg-white px-2 py-1 rounded shadow">{item.year}</span>
           </div>
-          ) : (
-            <div className="text-center md:text-left text-sm bg-white px-4 py-2 rounded shadow inline-block mt-4 md:mt-[13%]">
-              {item.title}
-            </div>
-          )}
+
+          {/* Bloc droit */}
+          <div className={`md:w-5/12 w-full px-4 ${isRight ? "order-1" : "order-3"}`}>
+            {!isRight ? (
+              <div className="bg-white gap-y-5 rounded-xl -mr-[10%] shadow-md p-5 md:flex gap-4 items-center mt-[10%]  ">
+                <img src={item.ima} alt="" className='mx-auto md:mx-0x' />
+                <p className="text-sm text-gray-700 text-center md:text-start">{item.description}</p>
+              </div>
+            ) : (
+              <div className="text-center mt-[13%] md:text-left text-sm bg-white px-4 py-2 rounded shadow md:inline-block">
+                {item.title}
+              </div>
+            )}
+          </div>
         </div>
-      </div>
-    );
-  })}
+      );
+    })}
+  </div>
+  <div className=" flex items-center justify-center ">
+  <div className="flex items-start gap-4 bg-[#F7F6F3] p-4 rounded-[12px] max-w-[400px]">
+    <img src={Icone} alt="" className="w-10 h-10 mt-1" />
+    <div className="flex flex-col">
+      <h1 className="text-[16px] font-semibold text-[#333333] mb-1">
+        A World of Possibilities In 2018
+      </h1>
+      <p className="text-[14px] text-[#333333] line-clamp-3">
+        I embarked on an exhilarating journey into the world of web design. Fueled by a deep passion for creativity and technology, I took my first steps into this dynamic field. It was a transformative experience.
+      </p>
+    </div>
+  </div>
 </div>
 
 </section>

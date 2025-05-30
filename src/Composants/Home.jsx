@@ -422,7 +422,7 @@ const testimoni = [
   </div>
 
   {/* Client Testimonial */}
-  <div className="bg-[#F7F6F3] h-[350px] p-6 flex flex-col items-start gap-4 rounded-[12px] md:max-w-sm w-full">
+  <div className="bg-[#F7F6F3] h-[400px] md:h-[360px] p-6 flex flex-col items-start gap-4 rounded-[12px] md:max-w-sm w-full">
     <img src={etoile} alt="Illustration" />
     <h2 className="text-xl font-semibold text-[#333]">
       Still have any Questions?

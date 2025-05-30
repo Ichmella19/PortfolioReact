@@ -19,7 +19,7 @@ export default function Footer() {
           <Link to="/">Home</Link>
         </li>
         <li className="cursor-pointer">
-          <Link to="/AboutMe">About Me</Link>
+          <Link to="/About">About Me</Link>
         </li>
         <li className="cursor-pointer">
           <Link to="/Portfolio">Portfolio</Link>
