@@ -296,6 +296,7 @@ const testimoni = [
         <img src={Website2} alt="" className="w-[55px] h-[45px] object-cover rounded-[4px]" />
         <img src={Website3} alt="" className="w-[55px] h-[45px] object-cover rounded-[4px]" />
         <img src={Website4} alt="" className="w-[55px] h-[45px] object-cover rounded-[4px]" />
+        <img src={Website4} alt="" className="w-[55px] h-[45px] object-cover rounded-[4px]" />
       </div>
     </div>
 
@@ -317,7 +318,7 @@ const testimoni = [
   </button>
 </section>
 
-<section className="py-[30px] flex flex-col items-center gap-y-5 px-4">
+<section className="py-[30px] flex flex-col items-center gap-y-5">
   <h1 className="text-[#333333] font-semibold text-3xl text-center">
     What My Clients Say About Me
   </h1>
@@ -351,7 +352,7 @@ const testimoni = [
     768: { slidesPerView: 2 },
     1024: { slidesPerView: 3 },
   }}
-  className="px-2" // padding horizontal réduit sur mobile
+  className="px-" // padding horizontal réduit sur mobile
 >
   {testimoni.map((review, index) => (
     <SwiperSlide
