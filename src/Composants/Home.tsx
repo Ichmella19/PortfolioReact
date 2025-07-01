@@ -140,22 +140,19 @@ const testimoni = [
   // Ajoute plus si besoin
 ];
 
- const Home= () => {
-
-
-  
-
-    const [openIndex, setOpenIndex] = useState(null);
-
-    const toggleFAQ = (index) => {
-      setOpenIndex(openIndex === index ? null : index);
-    };
+ const Home: React.FC = () => {
+   // ✅ Typage ajouté ici
+   const [openIndex, setOpenIndex] = useState<number | null>(null);
+ 
+   const toggleFAQ = (index: number) => {
+     setOpenIndex(openIndex === index ? null : index);
+   };
   
     return (
       <main className='w-full h-full bg-[#EEEBE5] mt-[60px] min-h-screen overflow-hidden  px-[30px] md:px-[100px] font-manrope '>
      <section className="md:flex md:py-[100px] py-[50px] relative">
   <div className="flex flex-col gap-y-7 text-start relative z-10">
-    <span className="w-[110px] px-3 py-2 text-[#4D4D4D] bg-[#F5F3F0] rounded-[13px]">
+    <span className=" p-3 text-[#4D4D4D] bg-[#F5F3F0] rounded-[13px] w-fit">
       Hello There
     </span>
 

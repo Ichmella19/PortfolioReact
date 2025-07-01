@@ -8,8 +8,8 @@ export default function Swipper() {
   useEffect(() => {
     // Forcer le rendu correct des flèches après montage
     setTimeout(() => {
-      const nextBtn = document.querySelector('.swiper-button-next');
-      const prevBtn = document.querySelector('.swiper-button-prev');
+      const nextBtn = document.querySelector('.swiper-button-next') as HTMLElement | null;;
+      const prevBtn = document.querySelector('.swiper-button-prev') as HTMLElement | null;;
       if (nextBtn && prevBtn) {
         nextBtn.style.display = 'block';
         prevBtn.style.display = 'block';

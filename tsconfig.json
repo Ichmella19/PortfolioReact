@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    /* Langue cible et environnement */
+    "target": "ES2020",                           // Version JS générée (plus moderne qu'ES2016)
+  "lib": ["DOM", "DOM.Iterable", "ES2020"],
+"types": ["node"],    // Bibliothèques à inclure pour React
+    "jsx": "react-jsx",                           // Pour React 17+ avec l'import JSX automatique
+      
+    /* Modules */
+    "module": "ESNext",                           // Recommandé pour les projets modernes
+    "moduleResolution": "node",                   // Utilise la résolution de modules de Node
+    "resolveJsonModule": true,                    // Permet d'importer des fichiers .json
+    "esModuleInterop": true,                      // Pour interopérabilité avec CommonJS
+    "allowSyntheticDefaultImports": true,         // Pour importer même sans export default
+    "baseUrl": "./src",   
+                            // Pour pouvoir faire des imports relatifs à /src
+    "paths": {
+      "@assets/*": ["assets/*"]
+    },
+
+    /* JavaScript + TypeScript */
+    "allowJs": true,                              // Permet d'inclure des fichiers JS
+    "checkJs": false,                             // Ne pas typer les fichiers JS
+
+    /* Emission */
+    "outDir": "dist",                             // Où mettre le JS compilé
+    "sourceMap": true,                            // Pour le debug
+    "noEmit": true,                               // Ne pas générer de fichiers, utile avec Vite ou Webpack
+
+    /* Typage */
+    "strict": true,                               // Active tous les checks stricts
+    "noImplicitAny": true,                        // Empêche le type "any" implicite
+    "strictNullChecks": true,                     // null/undefined doivent être explicitement gérés
+    "forceConsistentCasingInFileNames": true,     // Sensible à la casse dans les imports
+
+    /* Autres */
+    "skipLibCheck": true,                         // Ignore les erreurs dans les .d.ts externes
+    "allowImportingTsExtensions": true            // Permet d'importer .ts/.tsx directement
+  },
+  "include": ["src"],                             // Inclure tous les fichiers dans src/
+  "exclude": ["node_modules", "dist"]             // Ne pas inclure node_modules ou dist
+}

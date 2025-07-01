@@ -11,6 +11,15 @@ import Rectangle23 from "../assets/images/Rectangle23.png";
 import Rectangle24 from "../assets/images/Rectangle24.png";
 import Rectangle25 from "../assets/images/Rectangle25.png";
 import Rectangle22 from "../assets/images/Rectangle22.png";
+
+type TimelineItem = {
+  year: string;
+  title: string;
+  description: string;
+  img: string;
+  ima: string;
+  side: string;
+};
 const timelineData = [
     {
       year: "Now",
@@ -65,8 +74,7 @@ const timelineData = [
    
    
   ];
-  
-const About= () => {
+  const About: React.FC = () => {
    
      return (
       <main className='w-full h-full bg-[#EEEBE5] md:mt-[60px] min-h-screen  gap-x-8  px-[30px] md:px-[100px] font-manrope '>

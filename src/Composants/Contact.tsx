@@ -3,7 +3,7 @@ import { Formik, Form, Field } from 'formik';
 import * as yup from "yup";
 import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Plus } from "lucide-react";
+import { Plus,X } from "lucide-react";
 
 import { Navigation } from 'swiper/modules';
 import 'swiper/css';
@@ -62,13 +62,14 @@ const faqData = [
   }
 ];
 
- const Contact= () => {
-    const [openIndex, setOpenIndex] = useState(null);
-   
-       const toggleFAQ = (index) => {
-         setOpenIndex(openIndex === index ? null : index);
-       };
-     
+
+const Contact: React.FC = () => {
+  // ✅ Typage ajouté ici
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const toggleFAQ = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
      return (
        <main className='w-full min-h-screen bg-[#EEEBE5] mt-[60px] md:px-[100px] px-[30px] font-manrope overflow-hidden'>
          
